@@ -6,7 +6,7 @@ import CartWidget from './CartWidget';
 export default function NavBar() {
 
   return (
-    <Navbar fixed='top'>
+    <Navbar fixed='top' transparent>
       <Navbar.Brand>
         <Navbar.Item>
           <Link to={'/home'}>
@@ -15,8 +15,8 @@ export default function NavBar() {
         </Navbar.Item>
         <Navbar.Burger renderAs='a' aria-label="menu" data-target="navBarMenu"/>
       </Navbar.Brand>
-      <Navbar.Menu id='navBarMenu'>
-        <Navbar.Container>
+      <Navbar.Menu id='navBarMenu' >
+        <Navbar.Container align='right'>
           <Navbar.Item>
             <Link to={'/home'}>
               <Heading subtitle>Home</Heading>
@@ -41,10 +41,10 @@ export default function NavBar() {
                 <Link to={'/category/rutins'}>Rutinas</Link>
               </Navbar.Item>
               <Navbar.Item renderAs='a' value='item'>
-                <Link to={'/category/diets'}>Paquetes</Link>
+                <Link to={'/category/combos'}>Paquetes</Link>
               </Navbar.Item>
               <Navbar.Item renderAs='a' value='item'>
-                <Link to={'/category/diets'}>Promociones</Link>
+                <Link to={'/category/promos'}>Promociones</Link>
               </Navbar.Item>
             </Navbar.Dropdown>
           </ Navbar.Item>
@@ -54,8 +54,9 @@ export default function NavBar() {
             </Link>
           </Navbar.Item>
         </Navbar.Container>
+        <CartWidget quantity={2} />
+
       </Navbar.Menu>
-      <CartWidget quantity={2} />
     </Navbar>
 //     <div id="navBarMenu" class="navbar-menu">
 //         <div class="navbar-start">

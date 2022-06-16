@@ -1,22 +1,21 @@
 import 'bulma/css/bulma.min.css';
 import { Icon } from "react-bulma-components";
+import './CartWidget.css';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faCartShopping} from '@fortawesome/free-solid-svg-icons';
 
-export default function CartWidget({number}) {
+
+export default function CartWidget({quantity}) {
 	return (
 		<>
             <Icon
                 color='default'
                 size='large'
-                style={{
-                    border: '1px solid red'
-                }}
+                style={{fontSize: '43px'}}
             >
-                <i className="fas fa-home fa-2x" style={{color: 'red'}}/>
+                <FontAwesomeIcon icon={faCartShopping} />
             </Icon>
-
-
-
-			<span>{number}</span>
+			<span className='cartNumber'>{quantity}</span>
 		</>
 	);
 }
