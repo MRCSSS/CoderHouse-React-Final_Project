@@ -1,24 +1,27 @@
 import React from 'react'
 import 'bulma/css/bulma.min.css';
-import { Columns, Container, Heading, Image, Section } from 'react-bulma-components';
+import { Button, Columns, Container, Heading, Image, Section } from 'react-bulma-components';
+import ProductCount from './ProductCount';
 
-const ProductDetail = ({item}) => {
-    const { id,type, title, description, regularPrice, picture1Url } = item
+const ProductDetail = ({product}) => {
+    const { id, title, description, regularPrice} = product
 
     return (
         <Section>
             <Container>
                 <Columns>
                     <Columns.Column size={3}>
-                        <Heading>{type}</Heading>
+                        <Heading>{title}</Heading>
                         <Heading subtitle>{title}</Heading>
                         <p>{description}</p>
                     </Columns.Column>
                     <Columns.Column size={5}>
-                        <Image src={picture1Url} alt='imagenMouse'/>
+                        <Image src='http://bulma.io/images/placeholders/1280x960.png' alt={"imagen_"+id}/>
                     </Columns.Column>
-                    <Columns.Column size={4}>
+                    <Columns.Column size={4} textAlign='center'>
                         <Heading subtitle>$ {regularPrice}.00</Heading>
+                        <ProductCount inicial={1}/>
+                        <Button color="info">Agregar al Carrito</Button>
                     </Columns.Column>
                 </Columns>
             </Container>
